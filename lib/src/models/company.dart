@@ -24,6 +24,7 @@ class Company {
     AssetResolver assetResolver,
   ) =>
       list
-          .map((x) => Company.fromJson(x, assetResolver))
-          .toList(growable: false);
+          ?.map((x) => Company.fromJson(x, assetResolver))
+          ?.toList(growable: false) ??
+      null;
 }

@@ -45,5 +45,8 @@ class Cast extends Creator {
     List<dynamic> list,
     AssetResolver assetResolver,
   ) =>
-      list.map((x) => Cast.fromJson(x, assetResolver)).toList(growable: false);
+      list
+          ?.map((x) => Cast.fromJson(x, assetResolver))
+          ?.toList(growable: false) ??
+      null;
 }

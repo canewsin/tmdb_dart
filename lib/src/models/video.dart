@@ -31,5 +31,5 @@ class Video {
       );
 
   static List<Video> listFromJson(List<dynamic> list) =>
-      list.map((x) => Video.fromJson(x)).toList(growable: false);
+      list?.map((x) => Video.fromJson(x))?.toList(growable: false) ?? null;
 }

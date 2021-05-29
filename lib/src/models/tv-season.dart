@@ -76,6 +76,7 @@ class SeasonBase {
     AssetResolver assetResolver,
   ) =>
       list
-          .map((x) => SeasonBase.fromJson(x, assetResolver))
-          .toList(growable: false);
+          ?.map((x) => SeasonBase.fromJson(x, assetResolver))
+          ?.toList(growable: false) ??
+      null;
 }

@@ -35,6 +35,7 @@ class Creator {
     AssetResolver assetResolver,
   ) =>
       list
-          .map((x) => Creator.fromJson(x, assetResolver))
-          .toList(growable: false);
+          ?.map((x) => Creator.fromJson(x, assetResolver))
+          ?.toList(growable: false) ??
+      null;
 }

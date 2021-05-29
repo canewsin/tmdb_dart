@@ -21,6 +21,7 @@ class ImageInfo {
   static List<ImageInfo> listFromJson(
           List<dynamic> list, String resolveAsset(String path)) =>
       list
-          .map((x) => ImageInfo.fromJson(x, resolveAsset))
-          .toList(growable: false);
+          ?.map((x) => ImageInfo.fromJson(x, resolveAsset))
+          ?.toList(growable: false) ??
+      null;
 }

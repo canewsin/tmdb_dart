@@ -42,5 +42,8 @@ class Crew extends Creator {
     List<dynamic> list,
     AssetResolver assetResolver,
   ) =>
-      list.map((x) => Crew.fromJson(x, assetResolver)).toList(growable: false);
+      list
+          ?.map((x) => Crew.fromJson(x, assetResolver))
+          ?.toList(growable: false) ??
+      null;
 }

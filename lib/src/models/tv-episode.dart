@@ -111,6 +111,7 @@ class EpisodeBase {
     AssetResolver assetResolver,
   ) =>
       list
-          .map((x) => EpisodeBase.fromJson(x, assetResolver))
-          .toList(growable: false);
+          ?.map((x) => EpisodeBase.fromJson(x, assetResolver))
+          ?.toList(growable: false) ??
+      null;
 }
